@@ -1,4 +1,4 @@
-const textAnimation = ["Web Designer", "UI/UX Designer"]; 
+const textAnimation = ["Web Designer.", "UI/UX Designer.", "Professional Clown.", "Bed Enjoyer."]; 
 let iterator = 0;
 let currentString = 0;
 let deletionFlag = false;
@@ -48,5 +48,5 @@ function addText(nodeToManipulate, stringToAdd ,iteration) {
 
 
 function deleteText(nodeToManipulate) {
-    nodeToManipulate.textContent = nodeToManipulate.textContent.slice(0, -2);
+    nodeToManipulate.textContent = nodeToManipulate.textContent.slice(0, -3);
 }
