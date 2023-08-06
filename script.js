@@ -1,6 +1,7 @@
 const textAnimation = ["Web Designer", "UI/UX Designer"]; 
 let iterator = 0;
 let currentString = 0;
+let deletionFlag = false;
 
 
 const ticker = document.querySelector(".tickerBar");
@@ -8,11 +9,36 @@ const textAddition = document.querySelector(".textAdder");
 
 ticker.addEventListener("animationiteration", (e)=> {
     console.log(e);
-    if (iterator < textAnimation[currentString].length)
+
+    if (deletionFlag == true)
+    {
+        deleteText(textAddition);
+
+        if (textAddition.textContent.length == 0)
+        {
+            deletionFlag = false;
+            iterator = 0;
+            ++currentString;
+            
+            if (currentString >= textAnimation.length)
+            {
+                currentString = 0;
+            }
+        }
+    }
+
+    if (iterator < textAnimation[currentString].length && deletionFlag == false)
     {
         addText(textAddition, textAnimation[currentString], iterator);
         ++iterator;
+
+        if (iterator >= textAnimation[currentString].length)
+        {
+            deletionFlag = true;
+        }
     }
+    
+
 })
 
 
@@ -21,6 +47,6 @@ function addText(nodeToManipulate, stringToAdd ,iteration) {
 }
 
 
-function deleteText(nodeToManipulate, stringToAdd ,iteration) {
-
+function deleteText(nodeToManipulate) {
+    nodeToManipulate.textContent = nodeToManipulate.textContent.slice(0, -2);
 }
