@@ -1,5 +1,3 @@
-/* Scrolling Text Animation Start */
-
 const textAnimation = ["Web Designer.", "UI/UX Designer.", "Professional Clown.", "Bed Enjoyer."]; 
 let iterator = 0;
 let currentString = 0;
