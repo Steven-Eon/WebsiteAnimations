@@ -41,8 +41,32 @@
     to {opacity: 100;};
 }
 
-body {
+.animationTwo {
     animation-name: fadeIn;
     animation-duration: 2s;
     animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+
+/* Slide Fade Animation Start */
+/* Adjust Margins as Needed */
+
+@keyframes slideFade {
+    0% {
+        margin-top: 50px;
+        opacity: 0;
+    }
+    100% {
+        margin-top: 0px;
+        opacity: 100%;
+    }
+
+    
+}
+
+.animationThree {
+    animation-name: slideFade;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
 }
